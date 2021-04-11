@@ -1,1 +1,7 @@
 Project was implemented using these best practices
+
+#React/ES6
+Hooks(useState, useEffect)
+Async Await
+
+#CSS
