@@ -1,7 +1,11 @@
 Project was implemented using these best practices
 
-#React/ES6
+#React
 Hooks(useState, useEffect)
 Async Await
+Component folder structure
+
+#JS
+String interpolation
 
 #CSS

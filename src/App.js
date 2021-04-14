@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import PhotoList from "./components/PhotoList/PhotoList";
 
 function App() {
   const [photos, setPhotos] = useState([]);
   const URL =
-    "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=a515ee85a4403c999e040fb3cc175263&format=json&nojsoncallback=1&api_sig=9e0870db87c66bc6a46e178dfa615596";
+    "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=19e34b42273e3aa407ff5c2e0ab1c74e&format=json&nojsoncallback=1&api_sig=8a297b24ae88a0e6ff84d93711a2d0b3";
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(URL);
       const data = await response.json();
       setPhotos(data.photos.photo);
-      console.log(data);
     };
 
     fetchData();
@@ -20,19 +20,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Images</h1>
-      <div className='PhotoList'>
-        <ul>
-          {photos.map((photo) => (
-            <li key={photo.id}>
-              Title: {photo.title}
-              <img
-                src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
-                alt={photo.title}
-              ></img>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <PhotoList photos={photos} />
     </div>
   );
 }

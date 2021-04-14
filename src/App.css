@@ -1,15 +1,3 @@
 .App {
   text-align: center;
 }
-
-.PhotoList ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-}
-
-.PhotoList li {
-  list-style: none;
-  flex: 0 0 33.3%;
-  margin-top: 35px;
-}
