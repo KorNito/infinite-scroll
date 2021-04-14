@@ -2,11 +2,11 @@ import React from "react";
 import "./PhotoList.css";
 import Photo from "./Photo/Photo";
 
-const PhotoList = (props) => {
+const PhotoList = ({ photos }) => {
   return (
     <div className='PhotoList'>
       <ul>
-        {props.photos.map((photo) => (
+        {photos.map((photo) => (
           <li key={photo.id}>
             <Photo
               farm={photo.farm}

@@ -1,11 +1,11 @@
 import React from "react";
 import "./Photo.css";
 
-const Photo = (props) => {
+const Photo = ({ farm, server, id, secret, title }) => {
   return (
     <img
-      src={`https://farm${props.farm}.staticflickr.com/${props.server}/${props.id}_${props.secret}.jpg`}
-      alt={props.title}
+      src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
+      alt={title}
     ></img>
   );
 };

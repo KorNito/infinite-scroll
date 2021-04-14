@@ -7,5 +7,6 @@ Component folder structure
 
 #JS
 String interpolation
+Destructuring
 
 #CSS
