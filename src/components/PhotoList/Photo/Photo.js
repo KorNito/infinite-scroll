@@ -1,6 +1,6 @@
 import React from "react";
 
-const Photo = ({ farm, id, owner, server, secret, title }) => {
+const Photo = ({ farm, id, owner, server, secret, title, like }) => {
   return (
     <div className='Container'>
       <img
@@ -12,7 +12,9 @@ const Photo = ({ farm, id, owner, server, secret, title }) => {
         <p className='Title'>{title}</p>
         <hr />
         <p className='Owner'>{owner}</p>
-        <button className='FavoriteButton'>Favourite</button>
+        <button className='FavoriteButton' onClick={like}>
+          Favourite
+        </button>
       </div>
     </div>
   );
