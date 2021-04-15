@@ -1,7 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e7e7e7;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.App {
+  text-align: center;
+}
+.PhotoList ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.PhotoList li {
+  list-style: none;
+  flex: 0 0 33.3%;
+  margin-top: 35px;
+}
+@media screen and (max-width: 992px) {
+  .PhotoList li {
+    flex: 0 0 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .PhotoList li {
+    flex: 0 0 100%;
+  }
+}
 .Container {
   position: relative;
 }
-
 .Image {
   width: 80%;
   height: 200px;
@@ -9,7 +43,6 @@
   border-radius: 8px;
   box-shadow: 2px 2px #d1d3d2;
 }
-
 .PhotoInfo {
   transition: 0.5s ease;
   opacity: 0;
@@ -20,30 +53,24 @@
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .Container:hover .Image {
   opacity: 0.7;
 }
-
 .Container:hover .PhotoInfo {
   opacity: 1;
 }
-
 .Title {
   font-weight: bold;
   color: #ffffff;
 }
-
 hr {
   color: #ffffff;
   width: 40%;
 }
-
 .Owner {
   color: #ffffff;
   font-style: italic;
 }
-
 .FavoriteButton {
   background-color: Transparent;
   color: #ffffff;
@@ -53,7 +80,6 @@ hr {
   border-color: #ffffff;
   padding: 10px 20px;
 }
-
 .FavoriteButton:hover {
   cursor: pointer;
 }

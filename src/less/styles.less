@@ -1,0 +1,114 @@
+//Color variables
+@background-color-grey: #e7e7e7;
+@image-shadow-grey: #d1d3d2;
+@default-white: #ffffff;
+
+//Initial CSS
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: @background-color-grey;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//App component
+.App {
+  text-align: center;
+}
+
+//PhotoList component
+.PhotoList ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PhotoList li {
+  list-style: none;
+  flex: 0 0 33.3%;
+  margin-top: 35px;
+}
+
+@media screen and (max-width: 992px) {
+  .PhotoList li {
+    flex: 0 0 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .PhotoList li {
+    flex: 0 0 100%;
+  }
+}
+
+//Photo component
+.Container {
+  position: relative;
+}
+
+.Image {
+  width: 80%;
+  height: 200px;
+  transition: 0.5s ease;
+  border-radius: 8px;
+  box-shadow: 2px 2px @image-shadow-grey;
+}
+
+.PhotoInfo {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.Container:hover .Image {
+  opacity: 0.7;
+}
+
+.Container:hover .PhotoInfo {
+  opacity: 1;
+}
+
+.Title {
+  font-weight: bold;
+  color: @default-white;
+}
+
+hr {
+  color: @default-white;
+  width: 40%;
+}
+
+.Owner {
+  color: @default-white;
+  font-style: italic;
+}
+
+.FavoriteButton {
+  background-color: Transparent;
+  color: @default-white;
+  border: 0.5px solid;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: @default-white;
+  padding: 10px 20px;
+}
+
+.FavoriteButton:hover {
+  cursor: pointer;
+}

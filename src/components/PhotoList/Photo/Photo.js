@@ -1,5 +1,4 @@
 import React from "react";
-import "./Photo.css";
 
 const Photo = ({ farm, id, owner, server, secret, title }) => {
   return (

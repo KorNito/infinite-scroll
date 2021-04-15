@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import PhotoList from "./components/PhotoList/PhotoList";
 import { KEY } from "./api-key";
 
