@@ -24,7 +24,8 @@ function App() {
       .then((json) => {
         setPhotos([...photos, ...json.photos.photo]);
         setHasMore(json.photos.photo.length > 0);
-        // setLoading(false);
+        setLoading(false);
+        console.log(json);
       })
       .catch((error) => {
         console.log(error);
