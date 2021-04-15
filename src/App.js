@@ -21,11 +21,12 @@ function App() {
     setLoading(true);
     fetch(url)
       .then((response) => response.json())
-      .then((json) => {
-        setPhotos([...photos, ...json.photos.photo]);
-        setHasMore(json.photos.photo.length > 0);
+      .then((data) => {
+        setPhotos((prevPhotos) => {
+          return [...new Set([...prevPhotos, ...data.photos.photo])];
+        });
+        setHasMore(data.photos.photo.length > 0);
         setLoading(false);
-        console.log(json);
       })
       .catch((error) => {
         console.log(error);
