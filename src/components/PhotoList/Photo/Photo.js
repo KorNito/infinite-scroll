@@ -4,6 +4,7 @@ const Photo = ({ farm, id, owner, server, secret, title, like }) => {
   return (
     <div className='Container'>
       <img
+        loading='lazy'
         src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
         alt={title}
         className='Image'
