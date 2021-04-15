@@ -52,6 +52,8 @@ code {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .Container:hover .Image {
   opacity: 0.7;
@@ -62,14 +64,16 @@ code {
 .Title {
   font-weight: bold;
   color: #ffffff;
+  margin-bottom: 10px;
 }
 hr {
   color: #ffffff;
-  width: 40%;
+  margin-bottom: 10px;
 }
 .Owner {
   color: #ffffff;
   font-style: italic;
+  margin-bottom: 25px;
 }
 .FavoriteButton {
   background-color: Transparent;
@@ -82,4 +86,7 @@ hr {
 }
 .FavoriteButton:hover {
   cursor: pointer;
+}
+.FavoriteButton:active {
+  color: #000000;
 }

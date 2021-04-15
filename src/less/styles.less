@@ -2,6 +2,7 @@
 @background-color-grey: #e7e7e7;
 @image-shadow-grey: #d1d3d2;
 @default-white: #ffffff;
+@default-black: #000000;
 
 //Initial CSS
 * {
@@ -74,6 +75,8 @@ code {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .Container:hover .Image {
@@ -87,16 +90,18 @@ code {
 .Title {
   font-weight: bold;
   color: @default-white;
+  margin-bottom: 10px;
 }
 
 hr {
   color: @default-white;
-  width: 40%;
+  margin-bottom: 10px;
 }
 
 .Owner {
   color: @default-white;
   font-style: italic;
+  margin-bottom: 25px;
 }
 
 .FavoriteButton {
@@ -111,4 +116,8 @@ hr {
 
 .FavoriteButton:hover {
   cursor: pointer;
+}
+
+.FavoriteButton:active {
+  color: @default-black;
 }
