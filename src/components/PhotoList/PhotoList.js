@@ -10,9 +10,11 @@ const PhotoList = ({ photos }) => {
           <li key={photo.id}>
             <Photo
               farm={photo.farm}
-              server={photo.server}
               id={photo.id}
+              owner={photo.owner}
+              server={photo.server}
               secret={photo.secret}
+              title={photo.title}
             />
           </li>
         ))}

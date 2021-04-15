@@ -1,12 +1,21 @@
 import React from "react";
 import "./Photo.css";
 
-const Photo = ({ farm, server, id, secret, title }) => {
+const Photo = ({ farm, id, owner, server, secret, title }) => {
   return (
-    <img
-      src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
-      alt={title}
-    ></img>
+    <div class='Container'>
+      <img
+        src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
+        alt={title}
+        className='image'
+      />
+      <div class='middle'>
+        <p className='Title'>{title}</p>
+        <hr />
+        <p className='Owner'>{owner}</p>
+        <button className='FavoriteButton'>Favourite</button>
+      </div>
+    </div>
   );
 };
 
