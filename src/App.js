@@ -8,9 +8,11 @@ function App() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     fetchData();
+    setScrolling(false);
   }, [page]);
 
   const fetchData = () => {
@@ -34,7 +36,8 @@ function App() {
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {
-      if (hasMore) {
+      if (hasMore && !scrolling) {
+        setScrolling(true);
         setPage((prevPage) => prevPage + 1);
       }
     }
