@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PhotoList from "./components/PhotoList/PhotoList";
 import Spinner from "./components/Spinner/Spinner";
-import { KEY } from "./api-key";
+// import { KEY } from "./api-key";
+
+const KEY = "623d0c04d30e2b8f40c80006bae7e7ef";
 
 function App() {
   const [photos, setPhotos] = useState([]);
