@@ -3,13 +3,13 @@ import "./Photo.css";
 
 const Photo = ({ farm, id, owner, server, secret, title }) => {
   return (
-    <div class='Container'>
+    <div className='Container'>
       <img
         src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
         alt={title}
-        className='image'
+        className='Image'
       />
-      <div class='middle'>
+      <div className='PhotoInfo'>
         <p className='Title'>{title}</p>
         <hr />
         <p className='Owner'>{owner}</p>
