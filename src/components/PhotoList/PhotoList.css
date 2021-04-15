@@ -1,11 +1,22 @@
 .PhotoList ul {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 0;
 }
 
 .PhotoList li {
   list-style: none;
   flex: 0 0 33.3%;
   margin-top: 35px;
+}
+
+@media screen and (max-width: 992px) {
+  .PhotoList li {
+    flex: 0 0 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .PhotoList li {
+    flex: 0 0 100%;
+  }
 }
