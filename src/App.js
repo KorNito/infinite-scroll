@@ -1,26 +1,50 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import PhotoList from "./components/PhotoList/PhotoList";
+import { KEY } from "./api-key";
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const URL =
-    "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=19e34b42273e3aa407ff5c2e0ab1c74e&per_page=30&page=1&format=json&nojsoncallback=1&api_sig=49917a6a605beda7d99a683b22116d64";
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(URL);
-      const data = await response.json();
-      setPhotos(data.photos.photo);
-    };
-
     fetchData();
-  }, []);
+  }, [page]);
+
+  const fetchData = () => {
+    const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${KEY}&tags=sunset&per_page=20&page=${page}&format=json&nojsoncallback=1`;
+
+    setLoading(true);
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        setPhotos([...photos, ...json.photos.photo]);
+        setHasMore(json.photos.photo.length > 0);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  window.onscroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      if (hasMore) {
+        setPage((prevPage) => prevPage + 1);
+      }
+    }
+  };
 
   return (
     <div className='App'>
       <h1>Images</h1>
       <PhotoList photos={photos} />
+      {loading && "Loading"}
     </div>
   );
 }
