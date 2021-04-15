@@ -45,7 +45,6 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Images</h1>
       <PhotoList photos={photos} />
       {loading ? <Spinner /> : null}
     </div>
