@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PhotoList from "./components/PhotoList/PhotoList";
+import Spinner from "./components/Spinner/Spinner";
 import { KEY } from "./api-key";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       .then((json) => {
         setPhotos([...photos, ...json.photos.photo]);
         setHasMore(json.photos.photo.length > 0);
-        setLoading(false);
+        // setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -46,7 +47,7 @@ function App() {
     <div className='App'>
       <h1>Images</h1>
       <PhotoList photos={photos} />
-      {loading && "Loading"}
+      {loading ? <Spinner /> : null}
     </div>
   );
 }
